@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         //order is important!!! roles first to use later in users seeder
         $this->call(RoleTableSeeder::class);
         $this->call(UserTableSeeder::class);
+        $this->call(AppointmentTableSeeder::class);
     }
 }

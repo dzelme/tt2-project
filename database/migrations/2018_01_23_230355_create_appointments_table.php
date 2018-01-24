@@ -17,6 +17,7 @@ class CreateAppointmentsTable extends Migration
             $table->increments('id');
             $table->datetime('from');
             $table->datetime('to');
+            $table->boolean('reminder');
             $table->integer('patient_id')->index();
             $table->integer('doctor_id')->index();
             $table->timestamps();

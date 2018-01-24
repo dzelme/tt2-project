@@ -15,6 +15,12 @@ class User extends Authenticatable
         return $this->hasOne('App\Patient', 'user_id');
     }
     
+    // patient appointmnet
+    public function appointments()
+    {
+        return $this->hasMany('App\Appointment');
+    }
+    
     // roles
     public function roles()
     {
@@ -27,7 +33,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'personal_code', 'name', 'surname', 'email', 'password',
+        'identification', 'name', 'surname', 'email', 'password', 'alergies', 'gums', 'notes'
     ];
 
     /**

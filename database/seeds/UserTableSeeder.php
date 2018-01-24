@@ -19,29 +19,38 @@ class UserTableSeeder extends Seeder
         $role_administrator = Role::where('name', 'administrator')->first();
         
         $user = new User();
-        $user->personal_code = '020895-67890';
+        $user->identification = '020895-67890';
         $user->name = 'Kristaps';
         $user->surname = 'Lietotajs';
         $user->email = 'lietotajs@example.com';
         $user->password = bcrypt('lietotajs');
+        $user->alergies = 'big needles';
+        $user->gums = 'gingivitis';
+        $user->notes = 'needs extra legroom';
         $user->save();
         $user->roles()->attach($role_user); //attaches role to user
         
         $doctor = new User();
-        $doctor->personal_code = '130185-12345';
+        $doctor->identification = '130185-12345';
         $doctor->name = 'Mairis';
         $doctor->surname = 'Arsts';
         $doctor->email = 'arsts@example.com';
         $doctor->password = bcrypt('arsts');
+        $doctor->alergies = null;
+        $doctor->gums = null;
+        $doctor->notes = null;
         $doctor->save();
         $doctor->roles()->attach($role_doctor);
         
         $administrator = new User();
-        $administrator->personal_code = '121192-10293';
+        $administrator->identification = '121192-10293';
         $administrator->name = 'Davis';
         $administrator->surname = 'Admins';
         $administrator->email = 'admins@example.com';
         $administrator->password = bcrypt('admins');
+        $user->alergies = null;
+        $user->gums = null;
+        $user->notes = null;
         $administrator->save();
         $administrator->roles()->attach($role_administrator);
         
