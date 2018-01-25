@@ -23,7 +23,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //instructs Laravel to retrieve the Appointment model that corresponds to a 
+        //given ID whenever it sees {appointment} in a route declaration
+        //$router->model('appointment', 'App\Appointment');
 
         parent::boot();
     }
